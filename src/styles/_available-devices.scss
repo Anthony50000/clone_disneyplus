@@ -9,7 +9,12 @@
     &__list {
         display: grid;
         gap: 24PX;
-        grid-template-columns: repeat(4, 1FR);
+        grid-template-columns: repeat(4, 1fr);
+
+        @media (max-width: 768px) {
+            grid-template-columns: 1fr 1fr;
+        }
+        
 
         &__item {
             text-align: center;

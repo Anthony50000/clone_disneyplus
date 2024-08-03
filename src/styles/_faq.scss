@@ -20,10 +20,10 @@
                 position: relative;
 
                 &::after {
-                    content: '-';
+                    content: '+';
                     position: absolute;
                     top: 0;
-                    width: 24px;
+                    right: 24px;
                     height: 100%;
                     display: flex;
                     align-items: center;
@@ -32,7 +32,22 @@
             }
 
             &__answer { 
-                padding: 24px;
+                height: 0;
+                overflow: hidden;
+                padding: 0 24px;
+                transition: height, 0.5s ease;
+            }
+
+            &--is-open {
+                .faq__questions__item__question::after{
+                    content: '-';
+                }
+                    .faq__questions__item__answer {
+                        height: auto;
+                        padding-bottom: 24px;
+                        padding: 24px;
+                        transition: height, 0.5s ease;
+                    }
             }
         }
     }
